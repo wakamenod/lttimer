@@ -76,6 +76,8 @@ fvm flutter pub run flutter_launcher_icons
 [tasks.build-web]
 script = '''
 fvm flutter build web
+rm -fr ./docs/*
+cp -r ./build/web/* ./docs
 '''
 
 [tasks.run-web]
