@@ -1,0 +1,28 @@
+abbBar: 設定
+basicsSection:
+  title: 基本
+  longSessionMode: 長尺モード (分単位)
+  sessionTime: セッション時間
+continuousSection:
+  title: 連続セッション
+  autoRestart: 自動再スタート
+  interval: インターバル
+bellSection:
+  title: ベル
+  bell1: ベル 1
+  bell2: ベル 2
+  bell3: ベル 3
+  timeElapsed: '$time 経過'
+  soundTest: 音声テスト
+animationSection:
+  title: アニメーションと音声
+  show: 終了時アニメーション
+  soundTest: 音声テスト
+themeSection:
+  title: UIテーマ
+  darkMode: ダークモード
+licenseSection:
+  title: ライセンス
+min: '$min 分'
+sec: '$sec 秒'
+resetButton: リセット

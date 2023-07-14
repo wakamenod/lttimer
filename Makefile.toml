@@ -1,0 +1,98 @@
+[config]
+skip_core_tasks = true
+
+[tasks.clean]
+script = '''
+fvm flutter clean
+'''
+
+[tasks.install]
+script = '''
+fvm flutter pub get
+'''
+
+[tasks.fvm-install]
+script = '''
+fvm install
+'''
+
+[tasks.format]
+script = '''
+fvm dart format lib test
+'''
+
+[tasks.slang]
+script = '''
+fvm dart run slang watch
+'''
+
+[tasks.run]
+script = '''
+fvm flutter run --dart-define-from-file=dart_defines/dev.json
+'''
+
+[tasks.build_runner_watch]
+script = '''
+fvm flutter pub run build_runner watch --delete-conflicting-outputs
+'''
+
+[tasks.run-prod]
+script = '''
+fvm flutter run --dart-define-from-file=dart_defines/prod.json
+'''
+
+[tasks.test]
+script = '''
+fvm flutter test --coverage
+'''
+
+[tasks.lint]
+dependencies = ["format"]
+script = '''
+fvm flutter analyze
+'''
+
+[tasks.build-appbundle]
+script = '''
+fvm flutter build appbundle --dart-define-from-file=dart_defines/prod.json --obfuscate --split-debug-info=obfuscate/android
+'''
+
+[tasks.ipa-upload]
+script = '''
+fvm flutter build ipa --export-options-plist="ios/configs/ExportOptions.plist"
+'''
+
+[tasks.ipa-install]
+script = '''
+# fvm flutter build ipa
+ideviceinstaller -i build/ios/ipa/lttimer.ipa
+'''
+
+[tasks.icon]
+script = '''
+fvm flutter pub run flutter_launcher_icons
+'''
+
+[tasks.build-web]
+script = '''
+fvm flutter build web
+'''
+
+[tasks.run-web]
+script = '''
+fvm flutter build web
+docker-compose up
+'''
+
+[tasks.down]
+script = "docker-compose kill"
+
+[tasks.build-macos]
+script = '''
+fvm flutter build macos
+'''
+
+[tasks.update-golden]
+script = '''
+fvm flutter test --update-goldens
+'''

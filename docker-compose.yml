@@ -1,0 +1,12 @@
+version: '3'
+services:
+  lttimer-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lttimer-web
+    container_name: lttimer-web
+    ports:
+      - "1222:80"
+    volumes:
+      - ./build/web:/usr/share/nginx/html

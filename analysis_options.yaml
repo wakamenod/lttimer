@@ -1,0 +1,18 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  plugins:
+    - custom_lint
+  errors:
+    invalid_annotation_target: ignore
+  exclude:
+    - "lib/i18n"
+
+custom_lint:
+  rules:
+    - missing_provider_scope: false
+    - avoid_manual_providers_as_generated_provider_dependency: false
+
+linter:
+  rules:
+    - use_super_parameters

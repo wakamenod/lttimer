@@ -1,0 +1,28 @@
+abbBar: Settings
+basicsSection:
+  title: Basics
+  longSessionMode: Long Session Mode (in minutes)
+  sessionTime: Session Time
+continuousSection:
+  title: Continous Session
+  autoRestart: Auto restart
+  interval: Interval
+bellSection:
+  title: Bell
+  bell1: Bell 1
+  bell2: Bell 2
+  bell3: Bell 3
+  timeElapsed: 'In $time '
+  soundTest: Sound test
+animationSection:
+  title: Animation & Sound
+  show: Show congrats animation
+  soundTest: Sound test
+themeSection:
+  title: UI Theme
+  darkMode: Dark mode
+licenseSection:
+  title: Licenses
+min: '$min min'
+sec: '$sec sec'
+resetButton: Reset
