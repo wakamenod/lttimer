@@ -74,6 +74,11 @@ class SettingsController extends _$SettingsController {
     ref.read(dataStoreProvider).setSettings(state);
   }
 
+  void onSetDanmakuComments(comments) {
+    state = state.copyWith(congratsDanmakuComments: comments);
+    ref.read(dataStoreProvider).setSettings(state);
+  }
+
   // 発表時間内に含まれるベルの時間を取得
   List<Duration> get validBellsSorted {
     final bells = isLongSession
@@ -149,6 +154,10 @@ class SettingsController extends _$SettingsController {
   String get bell1Text => bellText(bell1);
   String get bell2Text => bellText(bell2);
   String get bell3Text => bellText(bell3);
+
+  String get danmakuCommentsText => state.congratsDanmakuComments.isEmpty
+      ? '-'
+      : state.congratsDanmakuComments;
 
   int clockTextMarkerValue(i) =>
       isLongSession ? i : i * state.sessionTime.inMinutes;

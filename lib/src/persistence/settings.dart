@@ -39,35 +39,39 @@ extension TimerModeX on TimerType {
 
 @HiveType(typeId: 0)
 class Settings {
-  Settings(
-      {required this.sessionMode,
-      required this.sessionTime,
-      required this.longSessionTime,
-      required this.isContinuous,
-      required this.intervalTime,
-      required this.bell1,
-      required this.bell2,
-      required this.bell3,
-      required this.longModeBell1,
-      required this.longModeBell2,
-      required this.longModeBell3,
-      required this.isDarkMode,
-      required this.showCongratsAnimation});
+  Settings({
+    required this.sessionMode,
+    required this.sessionTime,
+    required this.longSessionTime,
+    required this.isContinuous,
+    required this.intervalTime,
+    required this.bell1,
+    required this.bell2,
+    required this.bell3,
+    required this.longModeBell1,
+    required this.longModeBell2,
+    required this.longModeBell3,
+    required this.isDarkMode,
+    required this.showCongratsAnimation,
+    required this.congratsDanmakuComments,
+  });
   factory Settings.defaults() {
     return Settings(
-        sessionMode: TimerType.lightning,
-        sessionTime: TimerType.lightning.defaultTime,
-        longSessionTime: TimerType.long.defaultTime,
-        intervalTime: TimerType.interval.defaultTime,
-        isContinuous: true,
-        bell1: Duration.zero,
-        bell2: Duration.zero,
-        bell3: Duration.zero,
-        longModeBell1: Duration.zero,
-        longModeBell2: Duration.zero,
-        longModeBell3: Duration.zero,
-        isDarkMode: true,
-        showCongratsAnimation: true);
+      sessionMode: TimerType.lightning,
+      sessionTime: TimerType.lightning.defaultTime,
+      longSessionTime: TimerType.long.defaultTime,
+      intervalTime: TimerType.interval.defaultTime,
+      isContinuous: true,
+      bell1: Duration.zero,
+      bell2: Duration.zero,
+      bell3: Duration.zero,
+      longModeBell1: Duration.zero,
+      longModeBell2: Duration.zero,
+      longModeBell3: Duration.zero,
+      isDarkMode: true,
+      showCongratsAnimation: true,
+      congratsDanmakuComments: '',
+    );
   }
   // Lightning or Long Session
   @HiveField(0)
@@ -121,6 +125,10 @@ class Settings {
   @HiveField(12)
   final bool showCongratsAnimation;
 
+  // セッション終了時に表示する弾幕コメント
+  @HiveField(13, defaultValue: '')
+  final String congratsDanmakuComments;
+
   Settings copyWith({
     TimerType? sessionMode,
     Duration? sessionTime,
@@ -135,6 +143,7 @@ class Settings {
     Duration? longModeBell3,
     bool? isDarkMode,
     bool? showCongratsAnimation,
+    String? congratsDanmakuComments,
   }) {
     return Settings(
       sessionMode: sessionMode ?? this.sessionMode,
@@ -151,6 +160,8 @@ class Settings {
       isDarkMode: isDarkMode ?? this.isDarkMode,
       showCongratsAnimation:
           showCongratsAnimation ?? this.showCongratsAnimation,
+      congratsDanmakuComments:
+          congratsDanmakuComments ?? this.congratsDanmakuComments,
     );
   }
 }

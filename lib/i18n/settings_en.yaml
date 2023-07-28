@@ -17,6 +17,9 @@ bellSection:
 animationSection:
   title: Animation & Sound
   show: Show congrats animation
+  danmakuComments: Congrats Danmaku comments
+  danmakuDialogTitle: Please enter the text to be displayed scrolling on the screen
+  danmakuDialogHint: Enter the text
   soundTest: Sound test
 themeSection:
   title: UI Theme
@@ -25,4 +28,7 @@ licenseSection:
   title: Licenses
 min: '$min min'
 sec: '$sec sec'
+buttonOK: OK
+buttonCancel: Cancel
+butotnClear: Clear
 resetButton: Reset

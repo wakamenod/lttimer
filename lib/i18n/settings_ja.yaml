@@ -17,6 +17,9 @@ bellSection:
 animationSection:
   title: アニメーションと音声
   show: 終了時アニメーション
+  danmakuComments: 終了時弾幕コメント
+  danmakuDialogTitle: 弾幕コメントに使用するテキストを入力してください
+  danmakuDialogHint: コメントを入力
   soundTest: 音声テスト
 themeSection:
   title: UIテーマ
@@ -25,4 +28,7 @@ licenseSection:
   title: ライセンス
 min: '$min 分'
 sec: '$sec 秒'
+buttonOK: 確定
+buttonCancel: キャンセル
+butotnClear: クリア
 resetButton: リセット

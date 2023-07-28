@@ -30,13 +30,14 @@ class SettingsAdapter extends TypeAdapter<Settings> {
       longModeBell3: fields[10] as Duration,
       isDarkMode: fields[11] as bool,
       showCongratsAnimation: fields[12] as bool,
+      congratsDanmakuComments: fields[13] == null ? '' : fields[13] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, Settings obj) {
     writer
-      ..writeByte(13)
+      ..writeByte(14)
       ..writeByte(0)
       ..write(obj.sessionMode)
       ..writeByte(1)
@@ -62,7 +63,9 @@ class SettingsAdapter extends TypeAdapter<Settings> {
       ..writeByte(11)
       ..write(obj.isDarkMode)
       ..writeByte(12)
-      ..write(obj.showCongratsAnimation);
+      ..write(obj.showCongratsAnimation)
+      ..writeByte(13)
+      ..write(obj.congratsDanmakuComments);
   }
 
   @override
