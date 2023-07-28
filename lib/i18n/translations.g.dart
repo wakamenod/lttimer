@@ -1,9 +1,9 @@
 /// Generated file. Do not edit.
 ///
 /// Locales: 2
-/// Strings: 54 (27 per locale)
+/// Strings: 66 (33 per locale)
 ///
-/// Built on 2023-07-13 at 09:59 UTC
+/// Built on 2023-07-28 at 02:20 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -213,6 +213,9 @@ class _TranslationsSettingsEn {
       _TranslationsSettingsLicenseSectionEn._(_root);
   String min({required Object min}) => '${min} min';
   String sec({required Object sec}) => '${sec} sec';
+  String get buttonOK => 'OK';
+  String get buttonCancel => 'Cancel';
+  String get butotnClear => 'Clear';
   String get resetButton => 'Reset';
 }
 
@@ -278,6 +281,10 @@ class _TranslationsSettingsAnimationSectionEn {
   // Translations
   String get title => 'Animation & Sound';
   String get show => 'Show congrats animation';
+  String get danmakuComments => 'Congrats Danmaku comments';
+  String get danmakuDialogTitle =>
+      'Please enter the text to be displayed scrolling on the screen';
+  String get danmakuDialogHint => 'Enter the text';
   String get soundTest => 'Sound test';
 }
 
@@ -393,6 +400,12 @@ class _TranslationsSettingsJa implements _TranslationsSettingsEn {
   @override
   String sec({required Object sec}) => '${sec} 秒';
   @override
+  String get buttonOK => '確定';
+  @override
+  String get buttonCancel => 'キャンセル';
+  @override
+  String get butotnClear => 'クリア';
+  @override
   String get resetButton => 'リセット';
 }
 
@@ -467,6 +480,12 @@ class _TranslationsSettingsAnimationSectionJa
   @override
   String get show => '終了時アニメーション';
   @override
+  String get danmakuComments => '終了時弾幕コメント';
+  @override
+  String get danmakuDialogTitle => '弾幕コメントに使用するテキストを入力してください';
+  @override
+  String get danmakuDialogHint => 'コメントを入力';
+  @override
   String get soundTest => '音声テスト';
 }
 
@@ -534,6 +553,12 @@ extension on _TranslationsEn {
         return 'Animation & Sound';
       case 'settings.animationSection.show':
         return 'Show congrats animation';
+      case 'settings.animationSection.danmakuComments':
+        return 'Congrats Danmaku comments';
+      case 'settings.animationSection.danmakuDialogTitle':
+        return 'Please enter the text to be displayed scrolling on the screen';
+      case 'settings.animationSection.danmakuDialogHint':
+        return 'Enter the text';
       case 'settings.animationSection.soundTest':
         return 'Sound test';
       case 'settings.themeSection.title':
@@ -546,6 +571,12 @@ extension on _TranslationsEn {
         return ({required Object min}) => '${min} min';
       case 'settings.sec':
         return ({required Object sec}) => '${sec} sec';
+      case 'settings.buttonOK':
+        return 'OK';
+      case 'settings.buttonCancel':
+        return 'Cancel';
+      case 'settings.butotnClear':
+        return 'Clear';
       case 'settings.resetButton':
         return 'Reset';
       case 'timer.intervalText':
@@ -607,6 +638,12 @@ extension on _TranslationsJa {
         return 'アニメーションと音声';
       case 'settings.animationSection.show':
         return '終了時アニメーション';
+      case 'settings.animationSection.danmakuComments':
+        return '終了時弾幕コメント';
+      case 'settings.animationSection.danmakuDialogTitle':
+        return '弾幕コメントに使用するテキストを入力してください';
+      case 'settings.animationSection.danmakuDialogHint':
+        return 'コメントを入力';
       case 'settings.animationSection.soundTest':
         return '音声テスト';
       case 'settings.themeSection.title':
@@ -619,6 +656,12 @@ extension on _TranslationsJa {
         return ({required Object min}) => '${min} 分';
       case 'settings.sec':
         return ({required Object sec}) => '${sec} 秒';
+      case 'settings.buttonOK':
+        return '確定';
+      case 'settings.buttonCancel':
+        return 'キャンセル';
+      case 'settings.butotnClear':
+        return 'クリア';
       case 'settings.resetButton':
         return 'リセット';
       default:

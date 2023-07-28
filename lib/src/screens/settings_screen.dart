@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lttimer/i18n/translations.g.dart';
 import 'package:lttimer/src/audio/audio_manager.dart';
 import 'package:lttimer/src/screens/settings_controller.dart';
+import 'package:lttimer/src/screens/settings_input_dialog.dart';
 import 'package:lttimer/src/screens/timer_controller.dart';
 import 'package:lttimer/src/ui/session_time_picker.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -49,7 +50,7 @@ class SettingsScreen extends ConsumerWidget {
                     title: Text(t.settings.basicsSection.sessionTime),
                     trailing: Text(controller.selectedSessionTimeLabel),
                     onPressed: (context) {
-                      _showDialog(
+                      _showCupertinoModalPopup(
                         context,
                         SessionTimeCupertinoPicker(
                           initialIndex:
@@ -79,7 +80,7 @@ class SettingsScreen extends ConsumerWidget {
                     trailing: Text(
                         t.settings.sec(sec: settings.intervalTime.inSeconds)),
                     onPressed: (context) {
-                      _showDialog(
+                      _showCupertinoModalPopup(
                         context,
                         SessionTimeCupertinoPicker(
                           initialIndex: controller.indexOfInterval,
@@ -98,7 +99,7 @@ class SettingsScreen extends ConsumerWidget {
                   title: Text(t.settings.bellSection.bell1),
                   trailing: Text(controller.bell1Text),
                   onPressed: (context) {
-                    _showDialog(
+                    _showCupertinoModalPopup(
                         context,
                         CupertinoTimerPicker(
                             initialTimerDuration: controller.bell1,
@@ -111,7 +112,7 @@ class SettingsScreen extends ConsumerWidget {
                   title: Text(t.settings.bellSection.bell2),
                   trailing: Text(controller.bell2Text),
                   onPressed: (context) {
-                    _showDialog(
+                    _showCupertinoModalPopup(
                         context,
                         CupertinoTimerPicker(
                             initialTimerDuration: controller.bell2,
@@ -124,7 +125,7 @@ class SettingsScreen extends ConsumerWidget {
                   title: Text(t.settings.bellSection.bell3),
                   trailing: Text(controller.bell3Text),
                   onPressed: (context) {
-                    _showDialog(
+                    _showCupertinoModalPopup(
                         context,
                         CupertinoTimerPicker(
                             initialTimerDuration: controller.bell3,
@@ -148,6 +149,28 @@ class SettingsScreen extends ConsumerWidget {
                     title: Text(t.settings.animationSection.show),
                     onToggle: controller.onSetShowCongratsAnimation,
                     initialValue: settings.showCongratsAnimation,
+                  ),
+                  SettingsTile(
+                    title: Text(t.settings.animationSection.danmakuComments),
+                    trailing: SizedBox(
+                      width: 100,
+                      child: Text(
+                        controller.danmakuCommentsText,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    onPressed: (context) => showDialog(
+                        context: context,
+                        builder: (context) => SettingsInputDialog(
+                              defaultValue: ref
+                                  .read(settingsControllerProvider)
+                                  .congratsDanmakuComments,
+                              title: t
+                                  .settings.animationSection.danmakuDialogTitle,
+                              hintText:
+                                  t.settings.animationSection.danmakuDialogHint,
+                              onTapOK: controller.onSetDanmakuComments,
+                            )),
                   ),
                   SettingsTile(
                     title: Text(t.settings.bellSection.soundTest),
@@ -185,7 +208,8 @@ class SettingsScreen extends ConsumerWidget {
   }
 }
 
-void _showDialog(BuildContext context, Widget child, {VoidCallback? onReset}) {
+void _showCupertinoModalPopup(BuildContext context, Widget child,
+    {VoidCallback? onReset}) {
   showCupertinoModalPopup<void>(
     context: context,
     builder: (BuildContext context) => Container(

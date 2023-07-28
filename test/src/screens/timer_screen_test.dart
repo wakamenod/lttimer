@@ -72,7 +72,8 @@ void main() {
         longModeBell2: Duration.zero,
         longModeBell3: Duration.zero,
         isDarkMode: true,
-        showCongratsAnimation: true);
+        showCongratsAnimation: true,
+        congratsDanmakuComments: '');
 
     final controller = TimerController();
     final container = await createProviderContainer(controller, settings);
@@ -101,7 +102,8 @@ void main() {
         longModeBell2: Duration.zero,
         longModeBell3: Duration.zero,
         isDarkMode: true,
-        showCongratsAnimation: true);
+        showCongratsAnimation: true,
+        congratsDanmakuComments: '');
 
     final controller = TimerController();
     final container = await createProviderContainer(controller, settings);
@@ -131,7 +133,8 @@ void main() {
         longModeBell2: const Duration(minutes: 20),
         longModeBell3: const Duration(minutes: 30),
         isDarkMode: true,
-        showCongratsAnimation: true);
+        showCongratsAnimation: true,
+        congratsDanmakuComments: '');
 
     final controller = TimerController();
     final container = await createProviderContainer(controller, settings);
@@ -160,7 +163,8 @@ void main() {
         longModeBell2: const Duration(minutes: 20),
         longModeBell3: const Duration(minutes: 30),
         isDarkMode: true,
-        showCongratsAnimation: true);
+        showCongratsAnimation: true,
+        congratsDanmakuComments: '');
 
     final controller = TimerController();
     final container = await createProviderContainer(controller, settings);
