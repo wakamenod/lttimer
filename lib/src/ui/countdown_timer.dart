@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lttimer/src/screens/settings_controller.dart';
 import 'package:lttimer/src/screens/timer_controller.dart';
 import 'package:lttimer/src/ui/animation_layer.dart';
+import 'package:lttimer/src/ui/danmaku_layer.dart';
 
 import 'reset_button.dart';
 import 'start_stop_button.dart';
@@ -78,6 +79,8 @@ class CountdownTimerState extends ConsumerState<CountdownTimer>
   Widget build(BuildContext context) {
     final showAnimation = ref
         .watch(timerControllerProvider.select((value) => value.showAnimation));
+    final showDanmaku = ref.watch(settingsControllerProvider
+        .select((value) => value.congratsDanmakuComments.isNotEmpty));
 
     return LayoutBuilder(builder: (context, constraints) {
       final radius = constraints.maxWidth / 2 - 10;
@@ -95,6 +98,7 @@ class CountdownTimerState extends ConsumerState<CountdownTimer>
           if (showAnimation)
             AnimationLayer(
                 width: constraints.maxWidth, height: constraints.maxHeight),
+          if (showAnimation && showDanmaku) const DanmakuLayer(),
           Align(
             alignment: Alignment.bottomLeft,
             child: SizedBox(
