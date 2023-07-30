@@ -31,7 +31,7 @@ class ElapsedTimeText extends ConsumerWidget {
         children: [
           Text(
             minutesStr,
-            style: TextStyle(fontSize: fontSize),
+            style: GoogleFonts.robotoMono(fontSize: fontSize),
             textAlign: TextAlign.center,
           ),
           Text(
@@ -41,8 +41,11 @@ class ElapsedTimeText extends ConsumerWidget {
           ),
           Text(
             secondsStr,
-            style: TextStyle(fontSize: fontSize),
+            style: GoogleFonts.robotoMono(fontSize: fontSize),
             textAlign: TextAlign.center,
+          ),
+          const SizedBox(
+            width: 2,
           ),
           Text(
             t.timer.sec,
@@ -80,8 +83,11 @@ class CountdownSecondText extends ConsumerWidget {
         children: [
           Text(
             secondsStr,
-            style: TextStyle(fontSize: fontSize),
+            style: GoogleFonts.robotoMono(fontSize: fontSize),
             textAlign: TextAlign.center,
+          ),
+          const SizedBox(
+            width: 2,
           ),
           Text(
             t.timer.sec,
@@ -93,25 +99,3 @@ class CountdownSecondText extends ConsumerWidget {
     );
   }
 }
-
-// class TimeDigit extends StatelessWidget {
-//   const TimeDigit(
-//     this.text, {
-//     super.key,
-//     required this.width,
-//   });
-//   final String text;
-//   final double width;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SizedBox(
-//       width: width,
-//       child: Text(
-//         text,
-//         style: TextStyle(fontSize: width * 1.2),
-//         textAlign: TextAlign.center,
-//       ),
-//     );
-//   }
-// }

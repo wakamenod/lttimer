@@ -2,7 +2,7 @@ name: lttimer
 description: A new Flutter project.
 publish_to: 'none'
 
-version: 0.1.2+4
+version: 0.1.6+8
 
 environment:
   sdk: '>=3.0.5 <4.0.0'
@@ -46,7 +46,8 @@ flutter:
     - assets/tada.json
     - assets/clapping.mp3
     - assets/bell.mp3
-    - assets/google_fonts/
+    - assets/fonts/zentaku_gothic_new/
+    - assets/fonts/roboto_mono/
 
 flutter_launcher_icons:
   android: "launcher_icon"
