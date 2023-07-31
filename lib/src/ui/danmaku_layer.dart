@@ -6,7 +6,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lttimer/src/screens/settings_controller.dart';
 
 class DanmakuLayer extends ConsumerStatefulWidget {
-  const DanmakuLayer({super.key});
+  final double width;
+  final double height;
+
+  const DanmakuLayer({required this.width, required this.height, super.key});
 
   @override
   ConsumerState<DanmakuLayer> createState() => _DanmakuLayerState();
@@ -18,7 +21,7 @@ class _DanmakuLayerState extends ConsumerState<DanmakuLayer> {
   void startDanmaku() {
     final text = ref.read(settingsControllerProvider).congratsDanmakuComments;
     for (var i = 0; i < 8; i++) {
-      Timer(Duration(seconds: i), () {
+      Timer(Duration(milliseconds: i * 500), () {
         setState(() {
           danmakuList.add(_createDanmaku(text));
         });
@@ -33,9 +36,13 @@ class _DanmakuLayerState extends ConsumerState<DanmakuLayer> {
     return Positioned(
       top: topPosition,
       right: 0,
-      child: MovingText(
-        text: text,
-        fontSize: fontSize,
+      child: SizedBox(
+        width: widget.width,
+        height: widget.height,
+        child: MovingText(
+          text: text,
+          fontSize: fontSize,
+        ),
       ),
     );
   }
@@ -48,7 +55,10 @@ class _DanmakuLayerState extends ConsumerState<DanmakuLayer> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: danmakuList);
+    return SizedBox(
+        width: widget.width,
+        height: widget.height,
+        child: Stack(children: danmakuList));
   }
 }
 
@@ -72,13 +82,13 @@ class _MovingTextState extends State<MovingText>
     super.initState();
 
     controller = AnimationController(
-      duration: const Duration(seconds: 15),
+      duration: const Duration(seconds: 5),
       vsync: this,
     )..forward();
 
     offset = Tween<Offset>(
       begin: const Offset(1, 0),
-      end: const Offset(-5, 0),
+      end: const Offset(-1, 0),
     ).animate(controller);
   }
 
