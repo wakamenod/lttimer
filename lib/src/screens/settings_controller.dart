@@ -142,7 +142,8 @@ class SettingsController extends _$SettingsController {
   String _bellText(Duration bell) => t.settings.bellSection.timeElapsed(
       time: t.settings.sec(sec: bell == Duration.zero ? '-' : bell.inSeconds));
   String _longModeBellText(Duration bell) => t.settings.bellSection.timeElapsed(
-      time: t.settings.min(min: bell == Duration.zero ? '-' : bell.inMinutes));
+      time:
+          '${t.settings.min(min: bell == Duration.zero ? '-' : bell.inMinutes)} ${t.settings.sec(sec: bell == Duration.zero ? '-' : bell.inSeconds % 60)}');
 
   Duration get bell1 => isLongSession ? state.longModeBell1 : state.bell1;
   Duration get bell2 => isLongSession ? state.longModeBell2 : state.bell2;
