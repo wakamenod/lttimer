@@ -10,10 +10,12 @@ import 'src/app_bootstrap.dart';
 
 Future<void> main() async {
   LicenseRegistry.addLicense(() async* {
-    final zenkakuGothicNew = await rootBundle.loadString('assets/fonts/zentaku_gothic_new/OFL.txt');
-    yield LicenseEntryWithLineBreaks(['zenkaku_gothic_new'],  zenkakuGothicNew);
-    final robotoMono = await rootBundle.loadString('assets/fonts/roboto_mono/LICENSE.txt');
-    yield LicenseEntryWithLineBreaks(['roboto_mono'],  robotoMono);
+    final zenkakuGothicNew =
+        await rootBundle.loadString('assets/fonts/zentaku_gothic_new/OFL.txt');
+    yield LicenseEntryWithLineBreaks(['zenkaku_gothic_new'], zenkakuGothicNew);
+    final robotoMono =
+        await rootBundle.loadString('assets/fonts/roboto_mono/LICENSE.txt');
+    yield LicenseEntryWithLineBreaks(['roboto_mono'], robotoMono);
   });
 
   WidgetsFlutterBinding.ensureInitialized();
