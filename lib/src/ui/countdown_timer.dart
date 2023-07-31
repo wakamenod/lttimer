@@ -98,7 +98,11 @@ class CountdownTimerState extends ConsumerState<CountdownTimer>
           if (showAnimation)
             AnimationLayer(
                 width: constraints.maxWidth, height: constraints.maxHeight),
-          if (showAnimation && showDanmaku) const DanmakuLayer(),
+          if (showAnimation && showDanmaku)
+            DanmakuLayer(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight,
+            ),
           Align(
             alignment: Alignment.bottomLeft,
             child: SizedBox(
