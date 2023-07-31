@@ -94,7 +94,7 @@ script = '''
 fvm flutter build macos
 '''
 
-[tasks.update-golden]
+[tasks.update-goldens]
 script = '''
 fvm flutter test --update-goldens
 '''
