@@ -60,6 +60,7 @@ class CountdownTimerState extends ConsumerState<CountdownTimer>
       if (controller.timerFinished) {
         // アニメーション開始判定
         controller.showCongratsAnimationIfNeeded();
+        _stop();
         _reset();
         if (ref.read(settingsControllerProvider).isContinuous) {
           controller.toggleInterval();
