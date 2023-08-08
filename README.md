@@ -10,6 +10,18 @@ https://lttimer.wakamenod.com
 ### MacOS
 Download app from [releases](https://github.com/wakamenod/lttimer/releases)
 
+or
+
+[![Available on the Mac App Store](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/us/app/lttimer/id6451061917)
+
+### iOS
+[![Available on the App Store](http://cl.ly/WouG/Download_on_the_App_Store_Badge_US-UK_135x40.svg)](https://apps.apple.com/us/app/lttimer/id6451061917)
+
+
+### Android
+<a href='https://play.google.com/store/apps/details?id=com.wakamenod.lttimer'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height='80px'/></a>
+
+
 ## 設定
 <img width="400" src="screenshots/settings_ja.png">
 
@@ -20,7 +32,7 @@ Download app from [releases](https://github.com/wakamenod/lttimer/releases)
     - 自動再スタートがONの場合（デフォルト)、セッション終了後にインターバルを挟み、自動で次のセッションがスタートします。また、インターバルの時間を設定できます。
 - `ベル`
     - セッション中に時間経過のお知らせするベルの時間を3つまで設定できます。
- 
+
 ## Settings
 <img width="400" src="screenshots/settings_en.png">
 
